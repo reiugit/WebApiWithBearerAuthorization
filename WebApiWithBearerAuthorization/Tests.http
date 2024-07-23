@@ -1,0 +1,21 @@
+@HostAddress = http://localhost:5076
+
+// get fresh Token from login-endpoint
+@Token = CfDJ8EFUacI3wYpJoyRG6r8CoNcGhgxlmLs4ErNSIN23PcZUIF7km-JUAsfuFlD0cUG_eH737dXA-KYHRuC2CosFZK00Yi-krdlrdQhhnIXDZ3mzRFoCaqW47oSkFhDPimQSEVZdxmqv7brFVF5CMXS5uVrAVixLo24EhA7bYzucCgU3FXaKyr0KccvQ_QMLeIz8qiY1OeYtvj36gZhDTf2fl-m5grtKL-fka6VukDRqKrGba-nFxFCl0cHmZxAZMT7ZYw
+
+
+### login endpoint for getting a token
+GET {{HostAddress}}/login/
+Accept: application/json
+
+
+### without token => 401 Unauthorized
+GET {{HostAddress}}/check-authorization/
+Accept: application/json
+
+
+### with bearer token => 200 OK
+GET {{HostAddress}}/check-authorization/
+Accept: application/json
+Authorization: Bearer {{Token}}
+
